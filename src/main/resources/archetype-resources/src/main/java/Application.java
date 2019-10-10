@@ -17,6 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.PostConstruct;
 import java.util.Arrays;
+import java.util.stream.StreamSupport;
 
 @SpringBootApplication()
 public class Application {
@@ -48,6 +49,17 @@ public class Application {
 			user.setPassword(passwordEncoder.encode("root"));
 			user.grantAuthority(Role.ROLE_ADMIN);
 			userRepository.save(user);
+
+			logger.info("Created root user with success");
+			logger.info("Username : root");
+			logger.info("Password : root");
+		}else if(StreamSupport.stream(userRepository.findAll().spliterator(), false).count() == 0) {
+			//First time
+			User root = new User();
+			root.setUsername("root");
+			root.setPassword(passwordEncoder.encode("root"));
+			root.grantAuthority(Role.ROLE_ADMIN);
+			userRepository.save(root);
 
 			logger.info("Created root user with success");
 			logger.info("Username : root");
