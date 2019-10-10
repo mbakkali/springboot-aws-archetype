@@ -1,0 +1,17 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn clean install
+artifacts:
+  files:
+    - target/${artifactId}.jar
+    - appspec.yml
+    - deploy/**

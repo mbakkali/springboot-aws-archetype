@@ -1,0 +1,15 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+
+* ********************************* *
+*                                   *
+*           ${artifactId}           *
+*                                   *
+* ********************************* *
+
+
+Swagger : http://localhost:${applicationPort}/${artifactId}/swagger-ui.html
+Actuator : http://localhost:${applicationPort}/${artifactId}/actuator
+
+************************************

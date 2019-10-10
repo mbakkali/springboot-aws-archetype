@@ -1,0 +1,18 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+
+                LOCAL
+* ********************************* *
+*                                   *
+*      ${artifactId} - LOCAL        *
+*                                   *
+* ********************************* *
+
+Security : Root user is : {username : root, password : root}
+Swagger : http://localhost:${applicationPort}/${artifactId}/swagger-ui.html
+Database H2 console : http://localhost:${applicationPort}/${artifactId}/h2/console
+Actuator : http://localhost:${applicationPort}/${artifactId}/actuator
+
+
+************************************
