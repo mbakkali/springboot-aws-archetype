@@ -28,3 +28,8 @@ Go to the generated folder (Its name is the artifactId chosen)
 mvn clean install
 java -jar -Dspring.active.profiles=local target/yourartifact.jar
 ```
+
+#### And then 
+- Setup a git repository for your new project
+- Analyze the folder on sonarcloud.io
+- Create a new pipeline on AWS wih CodePipeline
